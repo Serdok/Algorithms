@@ -7,13 +7,13 @@
 #include "insertion.h"
 
 // Testing insertion sort
-TEST( BubbleSort, HandleInvalidSize ) {
+TEST( InsertionSort, HandleInvalidSize ) {
     int array[] = { 8, 3, 5, 1, 6, 4, 9, 0, 2, 7 };
 
     ASSERT_THROW( insertion_sort( array, 0 ), std::invalid_argument );
 }
 
-TEST( BubbleSort, CorrectSortInPlace ) {
+TEST( InsertionSort, CorrectSortInPlace ) {
     int array[] = { 8, 3, 5, 1, 6, 4, 9, 0, 2, 7 };
     std::size_t size = 10;
 
@@ -25,7 +25,7 @@ TEST( BubbleSort, CorrectSortInPlace ) {
     }
 }
 
-TEST( BubbleSort, CorrectSortAndCopy ) {
+TEST( InsertionSort, CorrectSortAndCopy ) {
     int array[] = { 8, 3, 5, 1, 6, 4, 9, 0, 2, 7 };
     std::size_t size = 10;
 
@@ -41,7 +41,7 @@ TEST( BubbleSort, CorrectSortAndCopy ) {
     }
 }
 
-TEST( BubbleSort, CorrectCopyAndNoChangeInPlace ) {
+TEST( InsertionSort, CorrectCopyAndNoChangeInPlace ) {
     const int array[] = { 8, 3, 5, 1, 6, 4, 9, 0, 2, 7 };
     std::size_t size = 10;
 
@@ -58,7 +58,7 @@ TEST( BubbleSort, CorrectCopyAndNoChangeInPlace ) {
     }
 }
 
-TEST( BubbleSort, CorrectCopyAndNoChangeInPlaceWithCast ) {
+TEST( InsertionSort, CorrectCopyAndNoChangeInPlaceWithCast ) {
     int array[] = { 8, 3, 5, 1, 6, 4, 9, 0, 2, 7 };
     std::size_t size = 10;
 
