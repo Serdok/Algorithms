@@ -1,5 +1,16 @@
-build_debug:
-  script: "mkdir -p build/debug; cd build/debug; cmake ../.."
+image: gcc
 
-build_release:
-  script: "mkdir -p build/release; cd build/release; cmake ../.."
+before_script:
+  - apt-get update --yes
+  - apt-get install --yes cmake
+
+debug:
+  script:
+    - "mkdir -p build/debug; cd build/debug; cmake ../.."
+    - "cd build/debug; make"
+
+release:
+  script:
+    - "mkdir -p build/release; cd build/release; cmake ../.."
+    - "cd build/release; make"
+
