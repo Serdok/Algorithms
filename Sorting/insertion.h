@@ -9,7 +9,7 @@
 
 /**
  * Insertion Sort. A simple, stable, in-place sorting algorithm efficient for small arrays <br/>
- * Worst case performance: O(n^2)
+ * Worst case performance: O(n^2) <br/>
  * Worst case space complexity: O(1)
  * @tparam T Type of the array to sort (ie. int). Make sure that assigment, copy and < operators are implemented
  * @param array The array to sort. This array will be sorted
@@ -39,7 +39,7 @@ T* insertion_sort( T array[], std::size_t size ) {
 
 /**
  * Insertion Sort. A simple, stable, in-place sorting algorithm efficient for small arrays <br/>
- * Worst case performance: O(n^2)
+ * Worst case performance: O(n^2) <br/>
  * Worst case space complexity: O(1)
  * @tparam T Type of the array to sort (ie. int). Make sure that assigment, copy and < operators are implemented
  * @param array The array to sort. This array will not be sorted
