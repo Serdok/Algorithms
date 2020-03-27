@@ -4,15 +4,20 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
+stages:
+  - cmake
+  - build
+  - test
+
 # create cmake caches
 cmake:
-    stage: build
+    stage: cmake
     before_script:
      - apt update && apt -y install make cmake
     script:
      - cmake .
 
-# build
+# build if cmake succeeded
 build:
   stage: build
   script:
@@ -21,8 +26,11 @@ build:
     paths:
       - bin
 
-# run tests using the binary built before
+# run tests if build succeeded
 test:
   stage: test
   script:
-    - ./run.sh
+    - ./bin/Test_BubbleSort
+    - ./bin/Test_HeapSort
+    - ./bin/Test_InsertionSort
+    - ./bin/Test_MergeSort
