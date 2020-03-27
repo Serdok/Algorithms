@@ -1,4 +1,11 @@
-# build tests
+image: gcc
+
+# install cmake
+before_script:
+  - apt-get update
+  - apt-get install -y cmake
+
+  # build tests
 build:
   stage: build
   script:
