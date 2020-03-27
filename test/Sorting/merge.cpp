@@ -81,6 +81,7 @@ TEST( MergeSort, CorrectSortAndCopy ) {
 
     int* result;
     ASSERT_NO_THROW( result = merge_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( result[i], sorted[i] ) << "Failed at index " << i;
     }
@@ -95,6 +96,7 @@ TEST( MergeSort, CorrectCopyAndNoChangeInPlace ) {
 
     int* result;
     ASSERT_NO_THROW( result = merge_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }
@@ -112,6 +114,7 @@ TEST( MergeSort, CorrectCopyAndNoChangeInPlaceWithCast ) {
 
     int* result;
     ASSERT_NO_THROW( result = merge_sort( const_cast<const int*>(array), size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }

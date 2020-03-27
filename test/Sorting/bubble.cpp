@@ -33,6 +33,7 @@ TEST( BubbleSort, CorrectSortAndCopy ) {
 
     int* result;
     ASSERT_NO_THROW( result = bubble_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], sorted[i] ) << "Sort - Failed at index " << i;
     }
@@ -50,6 +51,7 @@ TEST( BubbleSort, CorrectCopyAndNoChangeInPlace ) {
 
     int* result;
     ASSERT_NO_THROW( result = bubble_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }
@@ -67,6 +69,7 @@ TEST( BubbleSort, CorrectCopyAndNoChangeInPlaceWithCast ) {
 
     int* result;
     ASSERT_NO_THROW( result = bubble_sort( const_cast<const int*>(array), size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }

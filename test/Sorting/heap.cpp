@@ -46,6 +46,7 @@ TEST( HeapSort, CorrectSortAndCopy ) {
 
     int* result;
     ASSERT_NO_THROW( result = heap_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( result[i], sorted[i] ) << "Failed at index " << i;
     }
@@ -60,6 +61,7 @@ TEST( HeapSort, CorrectCopyAndNoChangeInPlace ) {
 
     int* result;
     ASSERT_NO_THROW( result = heap_sort( array, size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }
@@ -77,6 +79,7 @@ TEST( HeapSort, CorrectCopyAndNoChangeInPlaceWithCast ) {
 
     int* result;
     ASSERT_NO_THROW( result = heap_sort( const_cast<const int*>(array), size ) );
+    ASSERT_NE( array, result );
     for (std::size_t i = 0; i < size; i += 1) {
         EXPECT_EQ( array[i], array_[i] ) << "No change - Failed at index " << i;
     }
