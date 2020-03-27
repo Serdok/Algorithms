@@ -23,7 +23,9 @@ endif()
 
 add_subdirectory(googletest-src googletest-build EXCLUDE_FROM_ALL)
 
-# Create test executables, link them against gtest
+enable_testing()
+
+# Create executables, link them against gtest
 add_executable(Test_BubbleSort)
 target_link_libraries(Test_BubbleSort PRIVATE Sorting gtest)
 
@@ -38,3 +40,9 @@ target_link_libraries(Test_MergeSort PRIVATE Sorting gtest)
 
 # Set the sources for each target above
 add_subdirectory(Sorting)
+
+# Create tests for cmake to run
+add_test(NAME Test_BubbleSort COMMAND Test_BubbleSort)
+add_test(NAME Test_HeapSort COMMAND Test_HeapSort)
+add_test(NAME Test_InsertionSort COMMAND Test_InsertionSort)
+add_test(NAME Test_MergeSort COMMAND Test_MergeSort)
