@@ -1,0 +1,8 @@
+//
+// Created on 3/26/20.
+//
+
+#ifndef USEFULALGORITHMS_QUICK_H
+#define USEFULALGORITHMS_QUICK_H
+
+#endif //USEFULALGORITHMS_QUICK_H
