@@ -4,37 +4,22 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc
 
-stages:
-  - cmake
-  - build
-  - test
-
-# create cmake caches
-cmake:
-    stage: cmake
-    before_script:
-     - apt update && apt -y install make cmake
-    script:
-     - cmake .
-    artifacts:
-      paths:
-        - build
-
-# build if cmake succeeded
+# build tests
 build:
   stage: build
   script:
-    - ls
+    - mkdir build
+    - cd build
+    - cmake ..
     - make
   artifacts:
+    expire_in: 1 hour
     paths:
-      - bin
+      - build
 
-# run tests if build succeeded
+# run tests with the previously built executables
 test:
   stage: test
   script:
-    - ./bin/Test_BubbleSort
-    - ./bin/Test_HeapSort
-    - ./bin/Test_InsertionSort
-    - ./bin/Test_MergeSort
+    - cd build
+    - ctest
