@@ -17,21 +17,26 @@ template< typename T >
 void merge( T* array, std::size_t start, std::size_t pivot, std::size_t end );
 
 /**
- *
- * @tparam T
- * @param array
- * @param start
- * @param end
+ * Merge Sort. An efficient sorting algorithm using divide and conquer <br/>
+ * Worst case performance: O(n*log(n)) <br/>
+ * Worst case space complexity: O(n) <br/>
+ * This implementation sorts array in the range [start, end)
+ * @tparam T Type of the array to sort (ie. int). Make sure that assigment, copy and < operators are implemented
+ * @param array The array to sort. This array will be sorted
+ * @param start The index of the first element to sort
+ * @param end The index of the last element to sort
  */
 template< typename T >
 void merge_sort( T array[], std::size_t start, std::size_t end );
 
 /**
- *
- * @tparam T
- * @param array
- * @param size
- * @return
+ * Merge Sort. An efficient sorting algorithm using divide and conquer <br/>
+ * Worst case performance: O(n*log(n)) <br/>
+ * Worst case space complexity: O(n) <br/>
+ * @tparam T Type of the array to sort (ie. int). Make sure that assigment, copy and < operators are implemented
+ * @param array The array to sort. This array will be sorted
+ * @param size The number of elements in the array
+ * @return A copy of the sorted array
  */
 template< typename T >
 T* merge_sort( T array[], std::size_t size ) {
@@ -43,11 +48,13 @@ T* merge_sort( T array[], std::size_t size ) {
 }
 
 /**
- *
- * @tparam T
- * @param array
- * @param size
- * @return
+ * Merge Sort. An efficient sorting algorithm using divide and conquer <br/>
+ * Worst case performance: O(n*log(n)) <br/>
+ * Worst case space complexity: O(n) <br/>
+ * @tparam T Type of the array to sort (ie. int). Make sure that assigment, copy and < operators are implemented
+ * @param array The array to sort. This array will not be sorted
+ * @param size The number of elements in the array
+ * @return The sorted array
  */
 template< typename T >
 T* merge_sort( const T array[], std::size_t size ) {
