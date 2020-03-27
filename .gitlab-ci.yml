@@ -22,7 +22,6 @@ build:
 test:
   stage: test
   script:
-    - ls
     - cd build
     - ls
     - ctest
