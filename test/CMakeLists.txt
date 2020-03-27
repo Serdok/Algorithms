@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(Algorithms_Tests)
 
+include(CTest)
+
 set(CMAKE_CXX_STANDARD 17)
 
 # Download googletest at configure time
@@ -42,7 +44,7 @@ target_link_libraries(Test_MergeSort PRIVATE Sorting gtest)
 add_subdirectory(Sorting)
 
 # Create tests for cmake to run
-add_test(NAME Test_BubbleSort COMMAND Test_BubbleSort)
-add_test(NAME Test_HeapSort COMMAND Test_HeapSort)
-add_test(NAME Test_InsertionSort COMMAND Test_InsertionSort)
-add_test(NAME Test_MergeSort COMMAND Test_MergeSort)
+add_test(BubbleSort Test_BubbleSort)
+add_test(HeapSort Test_HeapSort)
+add_test(InsertionSort Test_InsertionSort)
+add_test(MergeSort Test_MergeSort)
