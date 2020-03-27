@@ -1,0 +1,28 @@
+# This file is a template, and might need editing before it works on your project.
+# use the official gcc image, based on debian
+# can use verions as well, like gcc:5.2
+# see https://hub.docker.com/_/gcc/
+image: gcc
+
+# create cmake caches
+cmake:
+    stage: build
+    before_script:
+     - apt update && apt -y install make cmake
+    script:
+     - cmake .
+
+# build
+build:
+  stage: build
+  script:
+    - make
+  artifacts:
+    paths:
+      - bin
+
+# run tests using the binary built before
+test:
+  stage: test
+  script:
+    - ./run.sh
